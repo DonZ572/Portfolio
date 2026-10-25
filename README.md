@@ -22,7 +22,7 @@ Portfolio personnel : cybersécurité & communication digitale.
 - Design responsive (ordinateur, tablette, mobile)
 - Terminal de commandes : appuyez sur `/` puis tapez `projets`, `contact`, `cv`, `nb`, `negatif`…
 - Menu plein écran, animations au défilement, respect du réglage « réduire les animations »
-- Formulaire de contact qui ouvre la messagerie du visiteur avec le message pré-rempli
+- Formulaire de contact envoyé via l'API REST d'EmailJS (appel `fetch`, sans bibliothèque), avec protection anti-robots
 
 ## Structure
 

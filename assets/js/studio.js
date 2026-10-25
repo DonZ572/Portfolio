@@ -169,16 +169,63 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    /* FORMULAIRE EN VERSION STATIQUE (GitHub Pages) : ouvre la messagerie du visiteur */
-    const mailForm = document.querySelector("form[data-mailto]");
+    /* FORMULAIRE DE CONTACT : envoi via l'API REST d'EmailJS (sans bibliothèque) */
+    const EMAILJS = {
+        service: "service_p5ggbfo",
+        template: "template_1yhlfwj",
+        publicKey: "bLFCL04jZGDODukfD",
+    };
 
-    mailForm?.addEventListener("submit", event => {
+    const contactForm = document.querySelector("form[data-mailto]");
+    const formStatus = document.getElementById("form-status");
+    const submitButton = contactForm?.querySelector('button[type="submit"]');
+
+    const showStatus = (message, type) => {
+        if (!formStatus) return;
+        formStatus.textContent = message;
+        formStatus.className = `form-msg ${type === "ok" ? "form-ok" : "form-err"}`;
+        formStatus.hidden = false;
+    };
+
+    contactForm?.addEventListener("submit", async event => {
         event.preventDefault();
-        const data = new FormData(mailForm);
-        const subject = data.get("subject") || "Contact depuis le portfolio";
-        const body = `${data.get("message")}\n\n— ${data.get("name")} (${data.get("email")})`;
+        const data = new FormData(contactForm);
 
-        window.location.href = `mailto:${mailForm.dataset.mailto}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        // Piège anti-robots : ce champ invisible doit rester vide
+        if (data.get("website")) return;
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Envoi en cours…";
+
+        try {
+            const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    service_id: EMAILJS.service,
+                    template_id: EMAILJS.template,
+                    user_id: EMAILJS.publicKey,
+                    template_params: {
+                        from_name: data.get("name"),
+                        from_email: data.get("email"),
+                        reply_to: data.get("email"),
+                        subject: data.get("subject") || "Contact depuis le portfolio",
+                        message: data.get("message"),
+                        time: new Intl.DateTimeFormat("fr-FR", { dateStyle: "full", timeStyle: "short" }).format(new Date()),
+                    },
+                }),
+            });
+
+            if (!response.ok) throw new Error(await response.text());
+
+            contactForm.reset();
+            showStatus("Merci ! Votre message a bien été envoyé, je vous réponds rapidement.", "ok");
+        } catch {
+            showStatus(`L'envoi a échoué. Vous pouvez m'écrire directement à ${contactForm.dataset.mailto}.`, "err");
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Envoyer le message →";
+        }
     });
 
     /* NUAGE DE MOTS DU PIED DE PAGE */

@@ -438,6 +438,9 @@
                 </dl>
 
                 <form class="form" data-mailto="donatien.zinsou24@audencia.com">
+                    <p class="form-msg" id="form-status" role="status" aria-live="polite" hidden></p>
+                    <!-- Piège anti-robots : invisible pour les humains -->
+                    <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
                     <label><span class="mono">Nom</span><input type="text" name="name" value="" maxlength="255" autocomplete="name" required></label>
                     <label><span class="mono">E-mail</span><input type="email" name="email" value="" maxlength="255" autocomplete="email" required></label>
                     <label class="wide"><span class="mono">Sujet</span><input type="text" name="subject" value="" maxlength="255" placeholder="Proposition d'alternance"></label>
