@@ -3,173 +3,170 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Plateforme Voyages | Projet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS principal du portfolio -->
-    <link rel="stylesheet" href="../assets/Css/style.css">
-    <link rel="stylesheet" href="../assets/Css/responsive.css">
+    <title>Plateforme Voyages | Donatien Zinsou</title>
+    <meta name="description" content="Projet de plateforme de réservation de voyages en groupe — PHP, MySQL, HTML, CSS.">
 
-    <!-- SEO -->
-    <meta name="description" content="Projet de plateforme de réservation de voyages en groupe - PHP, MySQL, HTML, CSS">
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../assets/Css/studio.css">
+
+    <script defer src="../assets/js/studio.js"></script>
 </head>
 
-<body class="page-with-fixed-nav">
+<body>
 
-    <nav class="navbar">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <a href="../index.html#hero" aria-label="Donatien Zinsou, accueil">
-                <span class="nav-monogram">DZ</span>
-                <span class="nav-name">Donatien Zinsou<small>Portfolio · 2026</small></span>
-            </a>
+    <header class="header">
+        <a class="logo" href="../index.html" aria-label="Donatien Zinsou, accueil">
+            <span>Donatien</span>
+            <span>Zinsou</span>
+        </a>
+
+        <nav class="nav" aria-label="Navigation principale">
+            <a href="../index.html#projects">Projets</a>
+            <a href="../index.html#experience">Parcours</a>
+            <a href="../index.html#skills">Savoir-faire</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+
+        <div class="header-right">
+            <a class="pill-btn" href="../index.html#projects">← Tous les projets</a>
         </div>
+    </header>
 
-        <ul class="nav-menu" id="primary-navigation">
-            <li><a href="../index.html#about">À propos</a></li>
-            <li><a href="../index.html#experience">Parcours</a></li>
-            <li><a href="../index.html#skills">Compétences</a></li>
-            <li><a href="../index.html#projects">Projets</a></li>
-            <li><a href="../index.html#education">Formation</a></li>
-            <li><a href="../index.html#interests">Intérêts</a></li>
-            <li><a href="../index.html#contact" class="nav-btn">Me contacter <span aria-hidden="true">↗</span></a></li>
-        </ul>
+    <main>
 
-        <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-controls="primary-navigation" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</nav>
-    <!--  HERO PROJET  -->
-    <section class="project-hero">
-        <div class="hero-container">
-            <div class="hero-text">
-                <span class="badge">Développement Web</span>
-                <h1>Application web de voyage</h1>
-                <p>
-                    Conception et développement d'une plateforme complète de réservation
-                    de voyages en groupe, avec gestion des utilisateurs, filtres avancés
-                    et simulation de paiement sécurisé.
+        <section class="p-hero">
+            <p class="mono">Projet 01 / 03 · Développement web</p>
+            <h1 class="p-title">Plateforme Voyages</h1>
+
+            <div class="p-intro">
+                <p class="p-lead">
+                    Conception et développement d'une plateforme complète de réservation de voyages en groupe,
+                    avec gestion des utilisateurs, filtres avancés et simulation de paiement sécurisé.
                 </p>
-                <div class="project-tags">
-                    <span>PHP</span>
-                    <span>MySQL</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                </div>
+                <ul class="tags">
+                    <li class="t-yellow">PHP</li>
+                    <li class="t-lilac">MySQL</li>
+                    <li class="t-pink">HTML</li>
+                    <li class="t-peach">CSS</li>
+                </ul>
             </div>
 
-            <div class="hero-image">
-                <div class="hero-image-wrapper">
-                    <img src="../assets/img/projet1.jpg" alt="Plateforme Voyages">
-                </div>
-            </div>
-        </div>
-    </section>
+            <figure class="p-img">
+                <img src="../assets/img/projet1.jpg" alt="Page d'accueil de la plateforme Voyages">
+            </figure>
+        </section>
 
-    <!--  CONTEXTE DU PROJET  -->
-    <section class="project-section">
-        <h2 class="section-title">Description du projet</h2>
-        <p class="section-text">
-            Depuis <strong>septembre 2025</strong>, dans le cadre d'un
-            <strong>projet d'entrepreneuriat</strong>, nous avons travaillé
-            sur la conception d'une plateforme de voyages en groupe répondant
-            à une problématique concrète : la difficulté à <strong>concrétiser
-                un voyage collectif</strong>.
-        </p>
+        <section class="block">
+            <header class="block-head">
+                <span class="mono">(01)</span>
+                <h2>Contexte</h2>
+            </header>
 
-        <p class="section-text">
-            De nombreuses idées de voyages naissent lors de discussions informelles
-            entre amis ou en famille, mais restent souvent à l'état de projet
-            en raison de <strong>désaccords de groupe</strong>, de contraintes
-            budgétaires, d'un manque d'organisation centralisée ou d'annulations.
-        </p>
-
-        <p class="section-text">
-            L'objectif de cette plateforme est de proposer un
-            <strong>outil clé en main</strong> permettant à des groupes
-            (amis, familles ou voyageurs ne se connaissant pas) de planifier
-            facilement un séjour en France, tout en favorisant une
-            <strong>expérience authentique</strong>, moins influencée par les
-            réseaux sociaux.
-        </p>
-
-        <!--  FONCTIONNALITÉS  -->
-        <section class="project-section alt">
-            <h2 class="section-title">Fonctionnalités principales</h2>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Gestion des utilisateurs</h3>
-                    <p>
-                        Système d'inscription et de connexion avec profils utilisateurs,
-                        stockage sécurisé des données et gestion des rôles.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Réservation de voyages</h3>
-                    <p>
-                        Sélection de destinations, dates et nombre de participants avec
-                        validation dynamique des disponibilités.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Filtres avancés</h3>
-                    <p>
-                        Recherche par destination, budget, durée et type de voyage
-                        pour améliorer l'expérience utilisateur.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Paiement simulé</h3>
-                    <p>
-                        Simulation de paiement sécurisé afin de comprendre les flux
-                        transactionnels sans passerelle réelle avec Stripe.
-                    </p>
-                </div>
+            <div class="p-text">
+                <p>
+                    Depuis <strong>septembre 2025</strong>, dans le cadre d'un <strong>projet d'entrepreneuriat</strong>,
+                    nous avons travaillé sur la conception d'une plateforme de voyages en groupe répondant à une
+                    problématique concrète : la difficulté à <mark class="hl-yellow">concrétiser un voyage collectif</mark>.
+                </p>
+                <p>
+                    De nombreuses idées de voyages naissent lors de discussions informelles entre amis ou en famille,
+                    mais restent souvent à l'état de projet en raison de <strong>désaccords de groupe</strong>, de contraintes
+                    budgétaires, d'un manque d'organisation centralisée ou d'annulations.
+                </p>
+                <p>
+                    L'objectif de cette plateforme est de proposer un <strong>outil clé en main</strong> permettant à des groupes
+                    (amis, familles ou voyageurs ne se connaissant pas) de planifier facilement un séjour en France,
+                    tout en favorisant une <strong>expérience authentique</strong>, moins influencée par les réseaux sociaux.
+                </p>
             </div>
         </section>
 
-        <!--  ARCHITECTURE TECHNIQUE  -->
-        <section class="project-section">
-            <h2 class="section-title">Architecture technique</h2>
+        <section class="block">
+            <header class="block-head">
+                <span class="mono">(02)</span>
+                <h2>Fonctionnalités</h2>
+            </header>
 
-            <ul class="project-list">
-                <li>Base de données <strong>MySQL</strong> (utilisateurs, voyages, réservations)</li>
-                <li>Front-end en <strong>HTML5 / CSS3 </strong></li>
-                <li>Validation des formulaires côté serveur</li>
+            <ul class="features">
+                <li>
+                    <span class="mono t-yellow">01</span>
+                    <h3>Gestion des utilisateurs</h3>
+                    <p>Système d'inscription et de connexion avec profils utilisateurs, stockage sécurisé des données et gestion des rôles.</p>
+                </li>
+                <li>
+                    <span class="mono t-pink">02</span>
+                    <h3>Réservation de voyages</h3>
+                    <p>Sélection de destinations, dates et nombre de participants avec validation dynamique des disponibilités.</p>
+                </li>
+                <li>
+                    <span class="mono t-lilac">03</span>
+                    <h3>Filtres avancés</h3>
+                    <p>Recherche par destination, budget, durée et type de voyage pour améliorer l'expérience utilisateur.</p>
+                </li>
+                <li>
+                    <span class="mono t-peach">04</span>
+                    <h3>Paiement simulé</h3>
+                    <p>Simulation de paiement sécurisé afin de comprendre les flux transactionnels, sans passerelle réelle avec Stripe.</p>
+                </li>
             </ul>
         </section>
 
-        <!--  COMPÉTENCES ACQUISES  -->
-        <section class="project-section alt">
-            <h2 class="section-title">Compétences développées et outils</h2>
+        <section class="block">
+            <header class="block-head">
+                <span class="mono">(03)</span>
+                <h2>Technique</h2>
+            </header>
 
-            <div class="skills-tags">
-                <span>PHP</span>
-                <span>JavaScript</span>
-                <span>MySQL</span>
-                <span>Architecture web</span>
-                <span>Gestion de projet</span>
-                <span>Notion</span>
+            <div class="p-tech">
+                <div class="rows">
+                    <div class="row">Base de données MySQL (utilisateurs, voyages, réservations)</div>
+                    <div class="row">Front-end en HTML5 / CSS3</div>
+                    <div class="row">Validation des formulaires côté serveur</div>
+                </div>
+
+                <div>
+                    <p class="mono">Compétences développées et outils</p>
+                    <ul class="tags" style="margin-top: 14px">
+                        <li class="t-yellow">PHP</li>
+                        <li class="t-pink">JavaScript</li>
+                        <li class="t-lilac">MySQL</li>
+                        <li class="t-peach">Architecture web</li>
+                        <li class="t-yellow">Gestion de projet</li>
+                        <li class="t-pink">Notion</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!--  NAVIGATION PROJETS  -->
-        <section class="project-navigation">
-            <a href="../index.html#projects" class="btn btn-outline">← Retour aux projets</a>
-            <a href="hotel.html" class="btn btn-primary">Projet suivant →</a>
-        </section>
+        <nav class="p-nav" aria-label="Navigation entre projets">
+            <a href="../index.html#projects">
+                <span class="mono">← Retour</span>
+                <strong>Tous les projets</strong>
+            </a>
+            <a href="hotel.html">
+                <span class="mono">Projet suivant →</span>
+                <strong>Réservation Hôtel</strong>
+            </a>
+        </nav>
 
+    </main>
 
+    <footer class="p-footer">
+        <div class="footer-bar">
+            <span class="mono">© 2026 Donatien Zinsou</span>
+            <span class="mono">
+                <a href="https://www.linkedin.com/in/donatien-zinsou/" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+                <a href="https://github.com/DonZ572" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+                <a href="../assets/cv/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+            </span>
+        </div>
+    </footer>
 
-
-        <script src="../assets/js/main.js"></script>
 </body>
 
 </html>

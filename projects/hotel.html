@@ -3,167 +3,165 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Système de Réservation Hôtel | Projet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="../assets/Css/style.css">
-    <link rel="stylesheet" href="../assets/Css/responsive.css">
+    <title>Réservation Hôtel | Donatien Zinsou</title>
+    <meta name="description" content="Projet de système de réservation hôtelière — PHP, MySQL.">
 
-    <!-- SEO -->
-    <meta name="description" content="Projet de système de réservation hôtelière - PHP, MySQL">
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../assets/Css/studio.css">
+
+    <script defer src="../assets/js/studio.js"></script>
 </head>
 
-<body class="page-with-fixed-nav">
+<body>
 
-    <nav class="navbar">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <a href="../index.html#hero" aria-label="Donatien Zinsou, accueil">
-                <span class="nav-monogram">DZ</span>
-                <span class="nav-name">Donatien Zinsou<small>Portfolio · 2026</small></span>
+    <header class="header">
+        <a class="logo" href="../index.html" aria-label="Donatien Zinsou, accueil">
+            <span>Donatien</span>
+            <span>Zinsou</span>
+        </a>
+
+        <nav class="nav" aria-label="Navigation principale">
+            <a href="../index.html#projects">Projets</a>
+            <a href="../index.html#experience">Parcours</a>
+            <a href="../index.html#skills">Savoir-faire</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+
+        <div class="header-right">
+            <a class="pill-btn" href="../index.html#projects">← Tous les projets</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="p-hero">
+            <p class="mono">Projet 02 / 03 · Template web · PHP</p>
+            <h1 class="p-title">Réservation Hôtel</h1>
+
+            <div class="p-intro">
+                <p class="p-lead">
+                    Application web de gestion hôtelière permettant l'administration des chambres,
+                    la gestion des réservations et le suivi des clients via une interface dédiée.
+                </p>
+                <ul class="tags">
+                    <li class="t-yellow">PHP</li>
+                    <li class="t-lilac">MySQL</li>
+                </ul>
+            </div>
+
+            <figure class="p-img">
+                <img src="../assets/img/hotel.jpg" alt="Page d'accueil du système de réservation hôtelière">
+            </figure>
+        </section>
+
+        <section class="block">
+            <header class="block-head">
+                <span class="mono">(01)</span>
+                <h2>Contexte</h2>
+            </header>
+
+            <div class="p-text">
+                <p>
+                    Ce projet repose sur l'utilisation et l'analyse d'un
+                    <strong>template de système de réservation hôtelière</strong>,
+                    réalisé dans le cadre de ma formation en développement web.
+                </p>
+                <p>
+                    L'objectif principal était de <mark class="hl-yellow">comprendre le fonctionnement global d'une application métier existante</mark>,
+                    notamment la logique de réservation, la gestion des chambres et l'organisation d'une base de données relationnelle.
+                </p>
+                <p>
+                    Ce travail m'a permis de renforcer mes compétences en <strong>lecture de code PHP</strong>,
+                    en analyse back-end et en compréhension des systèmes de gestion hôtelière.
+                </p>
+            </div>
+        </section>
+
+        <section class="block">
+            <header class="block-head">
+                <span class="mono">(02)</span>
+                <h2>Fonctionnalités étudiées</h2>
+            </header>
+
+            <ul class="features">
+                <li>
+                    <span class="mono t-yellow">01</span>
+                    <h3>Interface administrateur</h3>
+                    <p>Analyse du tableau de bord permettant la gestion des chambres et des réservations clients.</p>
+                </li>
+                <li>
+                    <span class="mono t-pink">02</span>
+                    <h3>Gestion des chambres</h3>
+                    <p>Compréhension du système de création, modification et suppression des chambres avec leurs caractéristiques.</p>
+                </li>
+                <li>
+                    <span class="mono t-lilac">03</span>
+                    <h3>Système de réservation</h3>
+                    <p>Étude du fonctionnement des réservations selon les dates, disponibilités et contraintes.</p>
+                </li>
+                <li>
+                    <span class="mono t-peach">04</span>
+                    <h3>Base de données relationnelle</h3>
+                    <p>Analyse des relations entre clients, chambres et réservations.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="block">
+            <header class="block-head">
+                <span class="mono">(03)</span>
+                <h2>Technique</h2>
+            </header>
+
+            <div class="p-tech">
+                <div class="rows">
+                    <div class="row">Template existant basé sur PHP</div>
+                    <div class="row">Base de données MySQL relationnelle</div>
+                    <div class="row">Analyse de la logique métier côté serveur</div>
+                    <div class="row">Tests fonctionnels et compréhension du flux applicatif</div>
+                </div>
+
+                <div>
+                    <p class="mono">Compétences développées</p>
+                    <ul class="tags" style="margin-top: 14px">
+                        <li class="t-yellow">Lecture de code PHP</li>
+                        <li class="t-pink">Analyse de template</li>
+                        <li class="t-lilac">MySQL</li>
+                        <li class="t-peach">Systèmes de réservation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <nav class="p-nav" aria-label="Navigation entre projets">
+            <a href="voyages.html">
+                <span class="mono">← Projet précédent</span>
+                <strong>Plateforme Voyages</strong>
             </a>
+            <a href="ecole.html">
+                <span class="mono">Projet suivant →</span>
+                <strong>Site de l'école</strong>
+            </a>
+        </nav>
+
+    </main>
+
+    <footer class="p-footer">
+        <div class="footer-bar">
+            <span class="mono">© 2026 Donatien Zinsou</span>
+            <span class="mono">
+                <a href="https://www.linkedin.com/in/donatien-zinsou/" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+                <a href="https://github.com/DonZ572" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+                <a href="../assets/cv/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+            </span>
         </div>
+    </footer>
 
-        <ul class="nav-menu" id="primary-navigation">
-            <li><a href="../index.html#about">À propos</a></li>
-            <li><a href="../index.html#experience">Parcours</a></li>
-            <li><a href="../index.html#skills">Compétences</a></li>
-            <li><a href="../index.html#projects">Projets</a></li>
-            <li><a href="../index.html#education">Formation</a></li>
-            <li><a href="../index.html#interests">Intérêts</a></li>
-            <li><a href="../index.html#contact" class="nav-btn">Me contacter <span aria-hidden="true">↗</span></a></li>
-        </ul>
-
-        <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-controls="primary-navigation" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</nav>
-    <!--  HERO PROJET (INCHANGÉ)  -->
-    <section class="project-hero">
-        <div class="hero-container">
-            <div class="hero-text">
-                <span class="badge">Template Web • PHP</span>
-                <h1>Système de Réservation Hôtel</h1>
-                <p>
-                    Application web de gestion hôtelière permettant
-                    l'administration des chambres, la gestion des réservations
-                    et le suivi des clients via une interface dédiée.
-                </p>
-                <div class="project-tags">
-                    <span>PHP</span>
-                    <span>MySQL</span>
-                </div>
-            </div>
-
-            <div class="hero-image">
-                <div class="hero-image-wrapper">
-                    <img src="../assets/img/hotel.jpg"
-                        alt="Système de réservation hôtel">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--  CONTEXTE  -->
-    <section class="project-section">
-        <h2 class="section-title">Contexte du projet</h2>
-
-        <p class="section-text">
-            Ce projet repose sur l'utilisation et l'analyse d'un
-            <strong>template de système de réservation hôtelière</strong>,
-            réalisé dans le cadre de ma formation en développement web.
-        </p>
-
-        <p class="section-text">
-            L'objectif principal était de comprendre le fonctionnement
-            global d'une application métier existante, notamment la logique
-            de réservation, la gestion des chambres et l'organisation
-            d'une base de données relationnelle.
-        </p>
-
-        <p class="section-text">
-            Ce travail m'a permis de renforcer mes compétences en
-            <strong>lecture de code PHP</strong>, en analyse back-end
-            et en compréhension des systèmes de gestion hôtelière.
-        </p>
-    </section>
-
-    <!--  FONCTIONNALITÉS  -->
-    <section class="project-section alt">
-        <h2 class="section-title">Fonctionnalités étudiées</h2>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>Interface administrateur</h3>
-                <p>
-                    Analyse du tableau de bord permettant
-                    la gestion des chambres et des réservations clients.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Gestion des chambres</h3>
-                <p>
-                    Compréhension du système de création,
-                    modification et suppression des chambres
-                    avec leurs caractéristiques.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Système de réservation</h3>
-                <p>
-                    Étude du fonctionnement des réservations
-                    selon les dates, disponibilités et contraintes.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Base de données relationnelle</h3>
-                <p>
-                    Analyse des relations entre clients,
-                    chambres et réservations.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!--  ARCHITECTURE TECHNIQUE  -->
-    <section class="project-section">
-        <h2 class="section-title">Architecture technique</h2>
-
-        <ul class="project-list">
-            <li>Template existant basé sur <strong>PHP</strong></li>
-            <li>Base de données <strong>MySQL</strong> relationnelle</li>
-            <li>Analyse de la logique métier côté serveur</li>
-            <li>Tests fonctionnels et compréhension du flux applicatif</li>
-        </ul>
-    </section>
-
-    <!--  COMPÉTENCES  -->
-    <section class="project-section alt">
-        <h2 class="section-title">Compétences développées</h2>
-
-        <div class="skills-tags">
-            <span>Lecture de code PHP</span>
-            <span>Analyse de template</span>
-            <span>MySQL</span>
-            <span>Systèmes de réservation</span>
-        </div>
-    </section>
-
-    <!--  NAVIGATION  -->
-    <section class="project-navigation">
-        <a href="voyages.html" class="btn btn-outline">← Projet précédent</a>
-        <a href="cisco.html" class="btn btn-primary">Projet suivant →</a>
-    </section>
-
-
-    <script src="../assets/js/main.js"></script>
 </body>
 
 </html>

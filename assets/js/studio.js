@@ -12,11 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
             loader?.classList.add("done");
             root.classList.add("ready");
             setTimeout(() => loader?.remove(), 900);
-
-            if (window.showContactMessage) {
-                window.showContactMessage = false;
-                document.getElementById("contact")?.scrollIntoView();
-            }
         }, wait);
     };
 

@@ -19,6 +19,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/Css/studio.css">
 
+    <!-- ICÔNE -->
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
     <!-- Le loader n'apparaît que si le JS est actif -->
     <script>
         document.documentElement.classList.add('js');
@@ -28,15 +31,11 @@
         const isReload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
         if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
         if (isReload && location.hash) history.replaceState(null, '', location.pathname + location.search);
-        if (isReload || !location.hash) window.scrollTo(0, 0);
 
-        // Filets de sécurité : fin du chargement et retour depuis le cache du navigateur
-        const toTop = () => { if (!window.showContactMessage && (isReload || !location.hash)) window.scrollTo(0, 0); };
+        const toTop = () => { if (isReload || !location.hash) window.scrollTo(0, 0); };
+        toTop();
         window.addEventListener('load', toTop);
         window.addEventListener('pageshow', event => { if (event.persisted) toTop(); });
-
-        // Exception : après l'envoi du formulaire, on affiche le message de confirmation
-        window.showContactMessage = false;
     </script>
     <script defer src="assets/js/studio.js"></script>
 </head>
@@ -222,7 +221,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="projects/cisco.html">
+                    <a href="projects/ecole.html">
                         <img src="assets/img/site-ecole.jpg" alt="" loading="lazy">
                         <span class="ws-title">Site de l'école</span>
                         <span class="ws-desc">Site web moderne présentant un établissement et ses formations.</span>
@@ -439,8 +438,6 @@
                 </dl>
 
                 <form class="form" data-mailto="donatien.zinsou24@audencia.com">
-                    
-                    
                     <label><span class="mono">Nom</span><input type="text" name="name" value="" maxlength="255" autocomplete="name" required></label>
                     <label><span class="mono">E-mail</span><input type="email" name="email" value="" maxlength="255" autocomplete="email" required></label>
                     <label class="wide"><span class="mono">Sujet</span><input type="text" name="subject" value="" maxlength="255" placeholder="Proposition d'alternance"></label>
