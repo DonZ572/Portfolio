@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         projets: ["Mes réalisations", goTo("projects")],
         parcours: ["Mes expériences", goTo("experience")],
         "savoir-faire": ["Mes compétences", goTo("skills")],
+        progression: ["Ce que j'ai appris", goTo("progress")],
         formation: ["Mes études", goTo("education")],
         contact: ["Me contacter", goTo("contact")],
         cv: ["Ouvrir mon CV", openUrl(document.querySelector('a[href$="cv.pdf"]')?.href || "/assets/cv/cv.pdf")],

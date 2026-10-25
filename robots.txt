@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://donz572.github.io/Portfolio/sitemap.xml

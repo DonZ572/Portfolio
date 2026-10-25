@@ -10,6 +10,15 @@
     <!-- SEO -->
     <meta name="description" content="Portfolio de Donatien Zinsou — Cybersécurité & communication digitale. À la recherche d'une alternance de 33 mois à partir de septembre 2026.">
     <meta name="author" content="Donatien Zinsou">
+    <link rel="canonical" href="https://donz572.github.io/Portfolio/">
+
+    <!-- Aperçu lors du partage du lien (LinkedIn, WhatsApp…) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Donatien Zinsou | Portfolio">
+    <meta property="og:description" content="Cybersécurité & communication digitale. À la recherche d'une alternance de 33 mois dès septembre 2026.">
+    <meta property="og:url" content="https://donz572.github.io/Portfolio/">
+    <meta property="og:image" content="https://donz572.github.io/Portfolio/assets/img/image1.jpg">
+    <meta property="og:locale" content="fr_FR">
 
     <!-- POLICES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,6 +89,7 @@
             <a href="#projects">Projets</a>
             <a href="#experience">Parcours</a>
             <a href="#skills">Savoir-faire</a>
+            <a href="#progress">Progression</a>
             <a href="#education">Formation</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -179,7 +189,7 @@
 
             <div class="works">
                 <a class="work" href="https://gestizapp.com" target="_blank" rel="noopener noreferrer">
-                    <div class="work-img"><img src="assets/img/gestizapp.png" alt="" loading="lazy"></div>
+                    <div class="work-img"><img src="assets/img/gestizapp.png" alt="Page d'accueil de GestizApp : « Gérez votre commerce comme un pro »" loading="lazy"></div>
                     <div class="work-info">
                         <div>
                             <h3>GestizApp</h3>
@@ -191,7 +201,7 @@
                 </a>
 
                 <a class="work" href="https://postulyjob.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <div class="work-img"><img src="assets/img/postuly.png" alt="" loading="lazy"></div>
+                    <div class="work-img"><img src="assets/img/postuly.png" alt="Tableau de bord de Postuly : suivi des candidatures et taux de réponse" loading="lazy"></div>
                     <div class="work-info">
                         <div>
                             <h3>Postuly</h3>
@@ -206,7 +216,7 @@
             <ul class="works-small">
                 <li>
                     <a href="projects/voyages.html">
-                        <img src="assets/img/projet1.jpg" alt="" loading="lazy">
+                        <img src="assets/img/projet1.jpg" alt="Page d'accueil de la plateforme Voyages" loading="lazy">
                         <span class="ws-title">Plateforme Voyages</span>
                         <span class="ws-desc">Réservation de voyages en groupe : filtres, profils et simulation de paiement.</span>
                         <span class="mono">PHP · MySQL · HTML · CSS</span>
@@ -214,7 +224,7 @@
                 </li>
                 <li>
                     <a href="projects/hotel.html">
-                        <img src="assets/img/hotel.jpg" alt="" loading="lazy">
+                        <img src="assets/img/hotel.jpg" alt="Page d'accueil du site de réservation hôtelière" loading="lazy">
                         <span class="ws-title">Réservation Hôtel</span>
                         <span class="ws-desc">Gestion hôtelière avec interface admin et gestion des réservations.</span>
                         <span class="mono">PHP · MySQL</span>
@@ -222,7 +232,7 @@
                 </li>
                 <li>
                     <a href="projects/ecole.html">
-                        <img src="assets/img/site-ecole.jpg" alt="" loading="lazy">
+                        <img src="assets/img/site-ecole.jpg" alt="Page d'accueil du site vitrine de l'école" loading="lazy">
                         <span class="ws-title">Site de l'école</span>
                         <span class="ws-desc">Site web moderne présentant un établissement et ses formations.</span>
                         <span class="mono">HTML · CSS · Responsive</span>
@@ -356,10 +366,61 @@
             </ol>
         </section>
 
+        <!--  PROGRESSION : CE QUE J'AI APPRIS  -->
+        <section class="block" id="progress">
+            <header class="block-head">
+                <span class="mono">(04)</span>
+                <h2>Progression</h2>
+            </header>
+
+            <p class="p-text progress-lead">
+                Mes projets suivent une courbe claire : du site vitrine statique jusqu'à des applications
+                full-stack en ligne. Voici ce que chaque étape m'a appris.
+            </p>
+
+            <ol class="steps">
+                <li>
+                    <span class="row-cat t-peach">Étape 1</span>
+                    <h3>Structurer une page</h3>
+                    <p class="mono">Site de l'école · HTML / CSS</p>
+                    <p>J'ai appris à organiser un contenu en HTML sémantique et à le rendre lisible sur mobile comme sur ordinateur.</p>
+                </li>
+                <li>
+                    <span class="row-cat t-lilac">Étape 2</span>
+                    <h3>Comprendre le côté serveur</h3>
+                    <p class="mono">Voyages, Hôtel · PHP / MySQL</p>
+                    <p>En lisant et en adaptant du code existant, j'ai compris les bases de données relationnelles, les formulaires et la logique métier.</p>
+                </li>
+                <li>
+                    <span class="row-cat t-pink">Étape 3</span>
+                    <h3>Construire un vrai produit</h3>
+                    <p class="mono">GestizApp · React / TypeScript</p>
+                    <p>Je suis passé du projet d'école au logiciel en ligne : plusieurs commerçants sur une même application (multi-tenant), boutique publique et assistant WhatsApp.</p>
+                </li>
+                <li>
+                    <span class="row-cat t-yellow">Étape 4</span>
+                    <h3>Connecter des services</h3>
+                    <p class="mono">Postuly · Node.js / Supabase / IA</p>
+                    <p>J'ai relié 4 API d'offres d'emploi, une authentification OAuth et de l'IA générative dans une même application déployée sur Vercel.</p>
+                </li>
+            </ol>
+
+            <div class="progress-grid">
+                <div>
+                    <p class="mono">Ce que j'ai renforcé en dehors du code</p>
+                    <p>La communication digitale : au BDE, la communauté est passée de 1 000 à 3 900 abonnés en 6 mois, et chez Green Invest Africa j'analyse les performances des publications pour les améliorer.</p>
+                </div>
+                <div>
+                    <p class="mono">Ce que je dois encore travailler</p>
+                    <p>L'anglais, aujourd'hui à un niveau débutant, et la cybersécurité en profondeur : c'est l'objectif de mon Pré-Master à Epitech dès septembre 2026.</p>
+                </div>
+            </div>
+        </section>
+
         <!--  FORMATION  -->
         <section class="block" id="education">
             <header class="block-head">
-                <span class="mono">(04)</span>
+                <span class="mono">(05)</span>
                 <h2>Formation</h2>
             </header>
 
@@ -411,7 +472,7 @@
         <!--  HORS CADRE  -->
         <section class="block" id="interests">
             <header class="block-head">
-                <span class="mono">(05)</span>
+                <span class="mono">(06)</span>
                 <h2>Hors cadre</h2>
             </header>
 
@@ -471,6 +532,15 @@
             </span>
             <button class="mono link-btn" type="button" id="clear-fx" hidden>Effacer les effets</button>
         </div>
+
+        <p class="credits">
+            Crédits — Polices <a href="https://fonts.google.com/specimen/Anton" target="_blank" rel="noopener noreferrer">Anton</a>,
+            <a href="https://fonts.google.com/specimen/Space+Grotesk" target="_blank" rel="noopener noreferrer">Space Grotesk</a> et
+            <a href="https://fonts.google.com/specimen/Space+Mono" target="_blank" rel="noopener noreferrer">Space Mono</a>
+            (Google Fonts, licence SIL Open Font License). Photo et captures d'écran : réalisations personnelles.
+            Direction artistique inspirée du studio <a href="https://toyfight.co/" target="_blank" rel="noopener noreferrer">ToyFight</a>.
+            Formulaire propulsé par <a href="https://www.emailjs.com/" target="_blank" rel="noopener noreferrer">EmailJS</a>.
+        </p>
     </footer>
 
 </body>
