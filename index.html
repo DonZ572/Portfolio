@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donatien Zinsou | Portfolio</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Portfolio de Donatien Zinsou — Cybersécurité & communication digitale. À la recherche d'une alternance de 33 mois à partir de septembre 2026.">
+    <meta name="author" content="Donatien Zinsou">
+
+    <!-- POLICES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/Css/studio.css">
+
+    <!-- Le loader n'apparaît que si le JS est actif -->
+    <script>
+        document.documentElement.classList.add('js');
+
+        // Toujours démarrer en haut de page à l'actualisation
+        // (un lien externe vers #section, comme « Retour aux projets », reste respecté)
+        const isReload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        if (isReload && location.hash) history.replaceState(null, '', location.pathname + location.search);
+        if (isReload || !location.hash) window.scrollTo(0, 0);
+
+        // Filets de sécurité : fin du chargement et retour depuis le cache du navigateur
+        const toTop = () => { if (!window.showContactMessage && (isReload || !location.hash)) window.scrollTo(0, 0); };
+        window.addEventListener('load', toTop);
+        window.addEventListener('pageshow', event => { if (event.persisted) toTop(); });
+
+        // Exception : après l'envoi du formulaire, on affiche le message de confirmation
+        window.showContactMessage = false;
+    </script>
+    <script defer src="assets/js/studio.js"></script>
+</head>
+
+<body>
+
+    <!--  LOADER  -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <span>Chargement</span>
+        <span>Un instant</span>
+        <span>SVP</span>
+    </div>
+
+    <!--  EN-TÊTE  -->
+    <header class="header">
+        <a class="logo" href="#hero" aria-label="Donatien Zinsou, accueil">
+            <span>Donatien</span>
+            <span>Zinsou</span>
+        </a>
+
+        <nav class="nav" aria-label="Navigation principale">
+            <a href="#projects">Projets</a>
+            <a href="#experience">Parcours</a>
+            <a href="#skills">Savoir-faire</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-right">
+            <button class="hint" type="button" data-terminal-open>Appuyez sur <kbd>/</kbd> pour ?</button>
+            <button class="pill-btn pill-dark" type="button" id="menu-open" aria-expanded="false" aria-controls="menu">Menu</button>
+        </div>
+    </header>
+
+    <!--  MENU PLEIN ÉCRAN  -->
+    <div class="menu" id="menu" hidden>
+        <div class="menu-top">
+            <span class="mono">Menu</span>
+            <button class="pill-btn" type="button" id="menu-close">Fermer</button>
+        </div>
+        <nav class="menu-links" aria-label="Menu">
+            <a href="#hero">Accueil</a>
+            <a href="#projects">Projets</a>
+            <a href="#experience">Parcours</a>
+            <a href="#skills">Savoir-faire</a>
+            <a href="#education">Formation</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="menu-bottom">
+            <div>
+                <span class="mono">Suivre</span>
+                <a href="https://www.linkedin.com/in/donatien-zinsou/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/DonZ572" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            <div>
+                <span class="mono">Écrire</span>
+                <a href="mailto:donatien.zinsou24@audencia.com">donatien.zinsou24@audencia.com</a>
+            </div>
+            <button class="pill-btn" type="button" data-terminal-open>Ouvrir le terminal <kbd>/</kbd></button>
+        </div>
+    </div>
+
+    <!--  TERMINAL DE COMMANDES  -->
+    <div class="terminal" id="terminal" role="dialog" aria-modal="true" aria-labelledby="terminal-title" hidden>
+        <div class="terminal-box">
+            <div class="terminal-head">
+                <span class="mono" id="terminal-title">DZ — Terminal de commandes</span>
+                <button class="terminal-x" type="button" data-terminal-close aria-label="Fermer le terminal">Échap</button>
+            </div>
+            <form class="terminal-form" id="terminal-form" autocomplete="off">
+                <label for="terminal-input" class="terminal-prompt">:/</label>
+                <input id="terminal-input" type="text" placeholder="Entrez une commande" spellcheck="false">
+            </form>
+            <p class="terminal-help">Tapez une commande et voyez où elle vous mène… ou choisissez-en une ci-dessous.</p>
+            <ul class="terminal-cmds" id="terminal-cmds"></ul>
+            <p class="terminal-out mono" id="terminal-out" role="status" aria-live="polite"></p>
+        </div>
+    </div>
+
+    <main>
+
+        <!--  HERO  -->
+        <section class="hero" id="hero">
+            <h1 class="hero-title" aria-label="Le profil résolument hybride, tech et business">
+                <span class="line"><span>Le profil</span></span>
+                <span class="line"><span>Résolument</span></span>
+                <span class="line"><span>Hybride<sup>®</sup></span></span>
+                <span class="line"><span>Tech <em>&amp;</em> Business</span></span>
+            </h1>
+
+            <figure class="hero-photo">
+                <img src="assets/img/image1.jpg" alt="Portrait de Donatien Zinsou">
+                <span class="sticker sticker-yellow">Alternance 33 mois</span>
+                <span class="sticker sticker-pink">Dès sept. 2026</span>
+            </figure>
+
+            <div class="hero-foot">
+                <p class="mono">Cybersécurité &amp; communication digitale<br>D'Abidjan à Nantes</p>
+
+                <a class="say-hi" href="mailto:donatien.zinsou24@audencia.com">
+                    <span class="say-hi-label">
+                        <span>Dites bonjour</span>
+                        <span>Akwaba</span>
+                    </span>
+                    <span class="say-hi-mail">donatien.zinsou24@audencia.com</span>
+                </a>
+            </div>
+        </section>
+
+        <!--  INTRO  -->
+        <section class="intro" id="about">
+            <h2 class="intro-title">Je transforme les idées en projets concrets, utiles et bien structurés.</h2>
+
+            <div class="intro-grid">
+                <p>
+                    Étudiant inscrit en <strong>Pré-Master Cybersécurité (Bac+4) à Epitech</strong>, je recherche une
+                    <mark class="hl-yellow">alternance de 33 mois à partir de septembre 2026</mark>.
+                    Mon profil hybride me permet de faire le lien entre technique et stratégie : j'ai déjà une première
+                    expérience en communication &amp; marketing digital et en support informatique.
+                </p>
+
+                <dl class="facts">
+                    <div><dt class="mono">Objectif</dt><dd>Alternance de 33 mois</dd></div>
+                    <div><dt class="mono">Début</dt><dd>Septembre 2026</dd></div>
+                    <div><dt class="mono">Rythme</dt><dd>3 semaines à Epitech / 2 mois en entreprise</dd></div>
+                    <div><dt class="mono">Base</dt><dd>Nantes, France</dd></div>
+                </dl>
+            </div>
+
+            <div class="intro-actions">
+                <a href="assets/cv/cv.pdf" class="pill-btn pill-dark" target="_blank" rel="noopener noreferrer">Voir mon CV ↗</a>
+                <a href="#projects" class="pill-btn">Voir mes projets ↓</a>
+            </div>
+        </section>
+
+        <!--  PROJETS  -->
+        <section class="block" id="projects">
+            <header class="block-head">
+                <span class="mono">(01)</span>
+                <h2>Réalisations</h2>
+            </header>
+
+            <div class="works">
+                <a class="work" href="https://gestizapp.com" target="_blank" rel="noopener noreferrer">
+                    <div class="work-img"><img src="assets/img/gestizapp.png" alt="" loading="lazy"></div>
+                    <div class="work-info">
+                        <div>
+                            <h3>GestizApp</h3>
+                            <p>Le commerce de proximité, en version SaaS</p>
+                        </div>
+                        <ul class="tags"><li class="t-yellow">SaaS</li><li class="t-lilac">React</li><li class="t-pink">TypeScript</li></ul>
+                    </div>
+                    <p class="work-desc">Logiciel de gestion commerciale tout-en-un (multi-tenant) pour commerçants en Afrique de l'Ouest : ventes, stock, réparations, prestations, rapports — avec boutique en ligne publique et assistant client automatisé sur WhatsApp.</p>
+                </a>
+
+                <a class="work" href="https://postulyjob.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <div class="work-img"><img src="assets/img/postuly.png" alt="" loading="lazy"></div>
+                    <div class="work-info">
+                        <div>
+                            <h3>Postuly</h3>
+                            <p>La recherche d'alternance, pilotée par l'IA</p>
+                        </div>
+                        <ul class="tags"><li class="t-peach">IA</li><li class="t-lilac">React</li><li class="t-yellow">Node.js</li></ul>
+                    </div>
+                    <p class="work-desc">Application full-stack de recherche d'emploi et de suivi de candidatures pour étudiants : 4 sources d'offres agrégées, CV et lettres adaptés par IA, relances et rappels d'entretien automatisés. Supabase, Vercel, OAuth.</p>
+                </a>
+            </div>
+
+            <ul class="works-small">
+                <li>
+                    <a href="projects/voyages.html">
+                        <img src="assets/img/projet1.jpg" alt="" loading="lazy">
+                        <span class="ws-title">Plateforme Voyages</span>
+                        <span class="ws-desc">Réservation de voyages en groupe : filtres, profils et simulation de paiement.</span>
+                        <span class="mono">PHP · MySQL · HTML · CSS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="projects/hotel.html">
+                        <img src="assets/img/hotel.jpg" alt="" loading="lazy">
+                        <span class="ws-title">Réservation Hôtel</span>
+                        <span class="ws-desc">Gestion hôtelière avec interface admin et gestion des réservations.</span>
+                        <span class="mono">PHP · MySQL</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="projects/cisco.html">
+                        <img src="assets/img/site-ecole.jpg" alt="" loading="lazy">
+                        <span class="ws-title">Site de l'école</span>
+                        <span class="ws-desc">Site web moderne présentant un établissement et ses formations.</span>
+                        <span class="mono">HTML · CSS · Responsive</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!--  PARCOURS  -->
+        <section class="block" id="experience">
+            <header class="block-head">
+                <span class="mono">(02)</span>
+                <h2>Parcours</h2>
+            </header>
+
+            <div class="rows">
+                <details class="row" open>
+                    <summary>
+                        <span class="row-cat t-yellow">En cours</span>
+                        <span class="row-title">Assistant communication &amp; marketing digital</span>
+                        <span class="row-org">Green Invest Africa</span>
+                        <span class="row-date mono">Avr. 2026 →</span>
+                        <span class="row-plus" aria-hidden="true"></span>
+                    </summary>
+                    <ul class="row-body">
+                        <li>Mise en œuvre de la stratégie de communication et marketing digital dans le cadre de projets à impact (Forum Phil Dev et Green Invest Africa)</li>
+                        <li>Création et gestion des publications sur les réseaux sociaux pour la visibilité et la notoriété des projets</li>
+                        <li>Analyse des performances (engagement, audience, visibilité) et propositions d'amélioration</li>
+                    </ul>
+                </details>
+
+                <details class="row">
+                    <summary>
+                        <span class="row-cat t-lilac">Bénévolat</span>
+                        <span class="row-title">Journées Portes Ouvertes</span>
+                        <span class="row-org">Audencia Business School</span>
+                        <span class="row-date mono">Déc. 2025</span>
+                        <span class="row-plus" aria-hidden="true"></span>
+                    </summary>
+                    <ul class="row-body">
+                        <li>Accueil et orientation des visiteurs</li>
+                        <li>Distribution de prospectus et information sur les programmes</li>
+                        <li>Gestion des flux via scan de QR codes (inscriptions et suivi des participants)</li>
+                    </ul>
+                </details>
+
+                <details class="row">
+                    <summary>
+                        <span class="row-cat t-peach">Stage</span>
+                        <span class="row-title">Assistant gestion de projet</span>
+                        <span class="row-org">TgMaster University · Abidjan</span>
+                        <span class="row-date mono">Mai – juil. 2025</span>
+                        <span class="row-plus" aria-hidden="true"></span>
+                    </summary>
+                    <ul class="row-body">
+                        <li>Suivi des plannings et coordination des équipes (respect des délais)</li>
+                        <li>Tests et validation d'outils numériques</li>
+                        <li>Rédaction de cahiers des charges (besoins techniques et fonctionnels)</li>
+                        <li>Reporting hebdomadaire des activités</li>
+                    </ul>
+                </details>
+
+                <details class="row">
+                    <summary>
+                        <span class="row-cat t-pink">Associatif</span>
+                        <span class="row-title">Responsable communication — BDE</span>
+                        <span class="row-org">TgMaster University · Abidjan</span>
+                        <span class="row-date mono">Nov. 2024 – mai 2025</span>
+                        <span class="row-plus" aria-hidden="true"></span>
+                    </summary>
+                    <div class="row-body">
+                        <p class="row-stat"><strong>1 000 → 3 900</strong> abonnés en 6 mois</p>
+                        <ul>
+                            <li>Création de contenus réguliers (visuels, annonces, événements)</li>
+                            <li>Gestion de la communication interne et externe</li>
+                            <li>Organisation et promotion d'événements</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="row">
+                    <summary>
+                        <span class="row-cat t-peach">Stage</span>
+                        <span class="row-title">Support &amp; sécurité informatique</span>
+                        <span class="row-org">El Barouch · Port-Bouët</span>
+                        <span class="row-date mono">Juin – août 2024</span>
+                        <span class="row-plus" aria-hidden="true"></span>
+                    </summary>
+                    <ul class="row-body">
+                        <li>Support informatique de premier niveau</li>
+                        <li>Bonnes pratiques de cybersécurité (accès et mots de passe)</li>
+                        <li>Sensibilisation aux risques de phishing</li>
+                        <li>Documentation des incidents</li>
+                    </ul>
+                </details>
+            </div>
+        </section>
+
+        <!--  SAVOIR-FAIRE  -->
+        <section class="block block-dark" id="skills">
+            <header class="block-head">
+                <span class="mono">(03)</span>
+                <h2>Savoir-faire</h2>
+            </header>
+
+            <ol class="services">
+                <li>
+                    <span class="mono">01</span>
+                    <h3>Développement web</h3>
+                    <p>Pages et sites responsives, applications full-stack.</p>
+                    <ul class="tags"><li>HTML / CSS</li><li>JavaScript</li><li>React</li><li>PHP</li><li>Python</li></ul>
+                </li>
+                <li>
+                    <span class="mono">02</span>
+                    <h3>Sécurité informatique</h3>
+                    <p>Bonnes pratiques, sensibilisation et sécurité de base des postes.</p>
+                    <ul class="tags"><li>Sécurité informatique</li><li>Réseaux</li><li>Windows / Linux</li></ul>
+                </li>
+                <li>
+                    <span class="mono">03</span>
+                    <h3>Données &amp; cloud</h3>
+                    <p>Bases de données, back-ends et hébergement.</p>
+                    <ul class="tags"><li>SQL</li><li>MongoDB</li><li>Supabase</li><li>Virtualisation / Cloud</li></ul>
+                </li>
+                <li>
+                    <span class="mono">04</span>
+                    <h3>Gestion de projet</h3>
+                    <p>Organisation agile, suivi et coordination d'équipe, veille continue.</p>
+                    <ul class="tags"><li>SCRUM</li><li>Notion</li><li>Trello</li><li>Git / GitHub</li><li>Figma</li><li>Canva</li></ul>
+                </li>
+            </ol>
+        </section>
+
+        <!--  FORMATION  -->
+        <section class="block" id="education">
+            <header class="block-head">
+                <span class="mono">(04)</span>
+                <h2>Formation</h2>
+            </header>
+
+            <div class="rows rows-static">
+                <div class="row">
+                    <div class="row-line">
+                        <span class="row-cat t-yellow">À venir</span>
+                        <span class="row-title">Pré-Master Cybersécurité (Bac+4)</span>
+                        <span class="row-org">Epitech</span>
+                        <span class="row-date mono">Sept. 2026</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row-line">
+                        <span class="row-cat t-lilac">En cours</span>
+                        <span class="row-title">Bachelor 3 Management – Entrepreneuriat</span>
+                        <span class="row-org">Audencia · Nantes</span>
+                        <span class="row-date mono">2025 – 2026</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row-line">
+                        <span class="row-cat">Diplômé</span>
+                        <span class="row-title">Bachelor 1 &amp; 2 Digital Management</span>
+                        <span class="row-org">TgMaster University · Abidjan</span>
+                        <span class="row-date mono">2023 – 2025</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row-line">
+                        <span class="row-cat">Diplômé</span>
+                        <span class="row-title">Baccalauréat scientifique</span>
+                        <span class="row-org">Collège Descartes · Marcory</span>
+                        <span class="row-date mono">2022 – 2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certs">
+                <span class="mono">Certificats Skilleos</span>
+                <ul class="tags">
+                    <li class="t-yellow">Gestion de projets agiles</li>
+                    <li class="t-pink">Sécurité informatique : les fondamentaux</li>
+                    <li class="t-lilac">L'intelligence artificielle</li>
+                </ul>
+            </div>
+        </section>
+
+        <!--  HORS CADRE  -->
+        <section class="block" id="interests">
+            <header class="block-head">
+                <span class="mono">(05)</span>
+                <h2>Hors cadre</h2>
+            </header>
+
+            <ul class="stickers">
+                <li class="t-yellow">Football</li>
+                <li class="t-pink">Sport à la salle</li>
+                <li class="t-lilac">Voyages</li>
+                <li class="t-peach">Gastronomie</li>
+                <li class="t-yellow">Cinéma</li>
+            </ul>
+        </section>
+
+        <!--  CONTACT  -->
+        <section class="contact" id="contact">
+            <h2 class="contact-title">Dites<br>bonjour</h2>
+            <a class="contact-mail" href="mailto:donatien.zinsou24@audencia.com">donatien.zinsou24@audencia.com</a>
+
+            <div class="contact-grid">
+                <dl class="contact-list">
+                    <div><dt class="mono">Téléphone</dt><dd><a href="tel:+33626852415">+33 6 26 85 24 15</a></dd></div>
+                    <div><dt class="mono">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/donatien-zinsou/" target="_blank" rel="noopener noreferrer">donatien-zinsou ↗</a></dd></div>
+                    <div><dt class="mono">GitHub</dt><dd><a href="https://github.com/DonZ572" target="_blank" rel="noopener noreferrer">DonZ572 ↗</a></dd></div>
+                    <div><dt class="mono">Base</dt><dd>Nantes, France</dd></div>
+                </dl>
+
+                <form class="form" data-mailto="donatien.zinsou24@audencia.com">
+                    
+                    
+                    <label><span class="mono">Nom</span><input type="text" name="name" value="" maxlength="255" autocomplete="name" required></label>
+                    <label><span class="mono">E-mail</span><input type="email" name="email" value="" maxlength="255" autocomplete="email" required></label>
+                    <label class="wide"><span class="mono">Sujet</span><input type="text" name="subject" value="" maxlength="255" placeholder="Proposition d'alternance"></label>
+                    <label class="wide"><span class="mono">Message</span><textarea name="message" rows="4" maxlength="5000" required></textarea></label>
+                    <button type="submit" class="pill-btn pill-dark wide">Envoyer le message →</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!--  PIED DE PAGE : NUAGE DE MOTS  -->
+    <footer class="footer">
+        <p class="cloud" aria-label="Un étudiant curieux en cybersécurité">
+            <span>Un</span>
+            <span class="cloud-word" data-words="Étudiant|Profil|Alternant">Étudiant</span>
+            <span class="cloud-word" data-words="Curieux|Hybride|Organisé|Motivé|Collaboratif">Curieux</span>
+            <span>en</span>
+            <span class="cloud-word" data-words="Cybersécurité|Communication|Développement|Gestion de projet">Cybersécurité</span>
+        </p>
+
+        <div class="footer-bar">
+            <span class="mono">© 2026 Donatien Zinsou® — Tous droits réservés</span>
+            <span class="mono">
+                <a href="https://www.linkedin.com/in/donatien-zinsou/" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+                <a href="https://github.com/DonZ572" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+                <a href="assets/cv/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+            </span>
+            <button class="mono link-btn" type="button" id="clear-fx" hidden>Effacer les effets</button>
+        </div>
+    </footer>
+
+</body>
+
+</html>
